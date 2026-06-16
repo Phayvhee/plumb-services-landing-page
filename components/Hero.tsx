@@ -9,9 +9,9 @@ export default function Hero() {
 
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-0">
-      {/* Background Image with Overlays */}
+      {/* Video Background with Overlays */}
       <motion.div
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 overflow-hidden"
         initial={{ scale: 1.05 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.8 }}
@@ -22,6 +22,17 @@ export default function Hero() {
             backgroundImage: 'url(/plumbing-hero.jpg)',
           }}
         />
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/plumbing-hero.jpg"
+          aria-hidden="true"
+        >
+          <source src="/videos/plumbing-hero.mp4" type="video/mp4" />
+        </video>
         {/* Dark gradient overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/40" />
         {/* Additional subtle overlay */}
